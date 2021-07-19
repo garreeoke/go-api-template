@@ -1,0 +1,23 @@
+accelerator:
+  displayName: Simple Go API Server
+  description: Files to get started creating a go api server
+  iconUrl: https://miro.medium.com/max/600/1*i2skbfmDsHayHhqPfwt6pA.png
+  tags:
+    - golang
+    - rest api
+  options:
+    - name: projectName
+      label: API Name
+      display: true
+      defaultValue: "sample-go-api"
+      required: true
+      inputType: text
+engine:
+  type: Chain
+  transformations:
+  - type: Include
+    patterns: ['**.go', '**.md']
+  - type: ReplaceText
+    substitutions:
+      - text: sample-go-api
+        with: "#projectName"

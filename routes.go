@@ -20,13 +20,13 @@ var routes = Routes{
 	Route{
 		"Healthz",
 		"GET",
-		"/v1/sample/healthz",
+		"/v1/sample-go-api/healthz",
 		Healthz,
 	},
 	Route{
-		"NewRecord",
+		"PostExample",
 		"POST",
-		"/v1/sample/record",
-		NewRecord,
+		"/v1/sample-go-api/record",
+		PostExample,
 	},
 }

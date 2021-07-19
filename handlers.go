@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"errors"
 	"io/ioutil"
 	"log"
@@ -24,9 +23,9 @@ func Healthz(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// NewRecord create a new record nd store it in elastic
+// PostExample create a new record nd store it in elastic
 // TODO, after prototype want data to go elsewhere and then be sent to elastic
-func NewRecord(w http.ResponseWriter, r *http.Request) {
+func PostExample(w http.ResponseWriter, r *http.Request) {
 
 	payload := Payload{
 		Code:       success,
@@ -38,26 +37,7 @@ func NewRecord(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		payload.processError(err, "reading body")
 	}
-	var records []Record
-	err = json.Unmarshal(body, &records)
-	if err != nil {
-		payload.processError(err, "unmarshall body")
-	}
-	for _, record := range records {
-		payload.NewRecords = append(payload.NewRecords, record)
-		/*  Uncomment when read doing other indexing strategy
-		currentTime := time.Now()
-		indexName := "frisk-" + currentTime.Format(timeFormat)
-		*/
-		err := ESConnect(&payload)
-		if err != nil {
-			payload.processError(err, "ESConnect")
-		}
-		err = ESInsert(&payload)
-		if err != nil {
-			payload.processError(err, "ESInsert")
-		}
-	}
+	payload.Data = body
 	payload.completeRequest()
 }
 
