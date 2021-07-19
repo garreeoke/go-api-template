@@ -1,1 +1,1 @@
-# Accelerator Template for Creating a Goland Api Server
+# Accelerator Template for Creating a Basic Go Api Server
