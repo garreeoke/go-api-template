@@ -1,3 +1,4 @@
-# Accelerator Template for Creating a Basic Go Api Server
+# sample-go-api
 
-- sample-go-api will be the name of the new api
+Put your content about sample-go-api here
+
