@@ -59,7 +59,7 @@ spec:
                 fieldRef:
                   apiVersion: v1
                   fieldPath: status.hostIP
-          image: garreeoke/sample-go-api
+          image: repo-name/sample-go-api
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

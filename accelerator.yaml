@@ -12,6 +12,12 @@ accelerator:
       defaultValue: "change-me"
       required: true
       inputType: text
+    - name: repoName
+      label: Registry path
+      display: true
+      defaultValue: "change-me"
+      required: true
+      inputType: text
 engine:
   type: Chain
   transformations:
@@ -21,3 +27,5 @@ engine:
     substitutions:
       - text: sample-go-api
         with: "#projectName"
+      - text: repo-name
+        with: "#repoName"
