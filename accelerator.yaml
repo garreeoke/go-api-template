@@ -9,13 +9,13 @@ accelerator:
     - name: projectName
       label: API Name
       display: true
-      defaultValue: "change-me"
+      defaultValue:
       required: true
       inputType: text
     - name: repoName
       label: Registry path
       display: true
-      defaultValue: "change-me"
+      defaultValue:
       required: true
       inputType: text
 engine:
