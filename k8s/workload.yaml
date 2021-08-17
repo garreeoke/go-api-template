@@ -1,0 +1,14 @@
+apiVersion: kontinue.io/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: sample-go-api
+    app.tanzu.vmware.com/workload-type: simple
+  name: sample-go-api
+spec:
+  resources: {}
+  source:
+    git:
+      url: https://github.com/git-repo-name/sample-go-api.git
+      ref:
+        branch: branch-name

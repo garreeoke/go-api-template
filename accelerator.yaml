@@ -12,10 +12,22 @@ accelerator:
       defaultValue: "change-me"
       required: true
       inputType: text
-    - name: repoName
+    - name: imageRepoName
       label: Registry path
       display: true
       defaultValue: "change-me"
+      required: true
+      inputType: text
+    - name: gitRepoName
+      label: Git repo name or organization
+      display: true
+      defaultValue: "change-me"
+      required: true
+      inputType: text
+    - name: branchName
+      label: Git branch name
+      display: true
+      defaultValue: "dev"
       required: true
       inputType: text
 engine:
@@ -27,5 +39,9 @@ engine:
     substitutions:
       - text: sample-go-api
         with: "#projectName"
-      - text: repo-name
-        with: "#repoName"
+      - text: image-repo-name
+        with: "#imageRepoName"
+      - text: git-repo-name
+        with: "#gitRepoName"
+      - text: branch-name
+        with: "#branchName"
