@@ -27,14 +27,14 @@ accelerator:
     - name: branchName
       label: Git branch name
       display: true
-      defaultValue: "dev"
+      defaultValue: "change-me"
       required: true
       inputType: text
 engine:
   type: Chain
   transformations:
   - type: Include
-    patterns: ['**.go', '**.md', 'k8s/**.yaml', 'Dockerfile*']
+    patterns: ['**.go', '**.md', 'k8s/**.yaml']
   - type: ReplaceText
     substitutions:
       - text: sample-go-api
