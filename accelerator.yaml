@@ -39,8 +39,6 @@ engine:
     substitutions:
       - text: sample-go-api
         with: "#projectName"
-      - text: image-repo-name
-        with: "#imageRepoName"
       - text: git-repo-name
         with: "#gitRepoName"
       - text: branch-name
